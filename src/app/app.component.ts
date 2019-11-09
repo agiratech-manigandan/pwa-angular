@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'test-app';
+  posts = [];
+  constructor(private appService: AppService ) {}
+  listPosts() {
+    this.appService.getPosts().subscribe(breweries => {
+      this.posts = breweries;
+      console.log('posts', this.posts);
+    });
+  }
+
 }

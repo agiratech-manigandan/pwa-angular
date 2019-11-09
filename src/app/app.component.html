@@ -505,6 +505,15 @@
     </a>
   </div>
 
+  <div>
+    <a (click)="listPosts()">click here get posts</a>
+  </div>
+
+<div>
+  <ul>
+    <li *ngFor="let post of posts">{{post.title}}</li>
+  </ul>
+</div>
   <!-- Footer -->
   <footer>
       Love Angular?&nbsp;
